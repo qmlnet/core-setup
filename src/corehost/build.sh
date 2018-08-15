@@ -231,6 +231,9 @@ if [ $__CrossBuild == 1 ]; then
     if command -v "clang-3.9" > /dev/null 2>&1; then
         export CC="$(command -v clang-3.9)"
         export CXX="$(command -v clang++-3.9)"
+    elif command -v clang > /dev/null 2>&1; then
+        export CC="$(command -v clang)"
+        export CXX="$(command -v clang++)"
     else
         echo "Unable to find Clang 3.9 Compiler"
         echo "Install clang-3.9 for cross compilation"
